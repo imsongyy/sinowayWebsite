@@ -11,7 +11,6 @@ public class SinowayPortalsApplication extends SpringBootServletInitializer {
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-		System.out.println(111);
 		return builder.sources(SinowayPortalsApplication.class);
 	}
 
