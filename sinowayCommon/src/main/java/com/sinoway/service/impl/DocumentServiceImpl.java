@@ -30,6 +30,11 @@ public class DocumentServiceImpl implements DocumentService {
 
     @Override
     public DocumentEntity findById(Long id) {
-        return null;
+        return documentRepository.findById(id).get();
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        documentRepository.deleteById(id);
     }
 }

@@ -32,4 +32,9 @@ public class PeriodicalServiceImpl implements PeriodicalService {
     public PeriodicalEntity findById(Long id) {
         return null;
     }
+
+    @Override
+    public void deleteById(Long id) {
+        periodicalRepository.deleteById(id);
+    }
 }

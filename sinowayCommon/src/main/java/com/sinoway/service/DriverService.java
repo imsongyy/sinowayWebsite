@@ -15,4 +15,6 @@ public interface DriverService {
 
     DriverEntity findById(Long id);
 
+    void deleteById(Long id);
+
 }

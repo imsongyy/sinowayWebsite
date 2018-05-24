@@ -33,4 +33,9 @@ public class DriverServiceImpl implements DriverService {
     public DriverEntity findById(Long id) {
         return null;
     }
+
+    @Override
+    public void deleteById(Long id) {
+        driverRepository.deleteById(id);
+    }
 }

@@ -62,6 +62,19 @@
         $("#main-body").load("periodical");
     }
 
+
+    function del(id) {
+        $.post("delPeriodical",{id:id},function(result){
+            if(result && result.msg == 'success'){
+                layer.msg("删除成功");
+                $('#table').bootstrapTable('refresh', {url: 'periodicals'});
+            }else {
+                layer.error(result.msg)
+            }
+        });
+    }
+
+
     $(document).ready(function () {
         function queryParams(params) {
             params.pageSize = params.limit;
@@ -113,7 +126,7 @@
                     valign: 'middle',
                     width: 160, // 定义列的宽度，单位为像素px
                     formatter: function (value, row, index) {
-                        return '<a class="btn btn-primary btn-sm" target="_blank" href="getFile?fileName='+row.fileName+'")">查看</a>&nbsp;&nbsp;<a class="btn btn-primary btn-sm" target="_blank" download="'+row.pName+'" href="getFile?fileName='+row.fileName+'")">下载</a>';
+                        return '<a class="btn btn-primary btn-sm" target="_blank" href="getFile?fileName='+row.fileName+'")">查看</a>&nbsp;&nbsp;<a class="btn btn-primary btn-sm" target="_blank" download="'+row.pName+'" href="getFile?fileName='+row.fileName+'")">下载</a>&nbsp;&nbsp;<a class="btn btn-primary btn-sm" href="javascript:void(0)" onclick="del('+row.id+')">删除</a>';
                     }
                 }
             ],

@@ -56,12 +56,15 @@
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label" for="contentFrom">来源</label>
+                                <#--<div class="col-sm-10">-->
+                                    <#--<select id="contentFrom" name="contentFrom" class="form-control">-->
+                                        <#--<option value="Google">Google</option>-->
+                                        <#--<option value="百度">百度</option>-->
+                                        <#--<option value="搜狐">搜狐</option>-->
+                                    <#--</select>-->
+                                <#--</div>-->
                                 <div class="col-sm-10">
-                                    <select id="contentFrom" name="contentFrom" class="form-control">
-                                        <option value="Google">Google</option>
-                                        <option value="百度">百度</option>
-                                        <option value="搜狐">搜狐</option>
-                                    </select>
+                                    <input type="text" id="contentFrom" name="contentFrom" class="form-control" placeholder="请输入资讯来源">
                                 </div>
                             </div>
                             <div class="form-group row">

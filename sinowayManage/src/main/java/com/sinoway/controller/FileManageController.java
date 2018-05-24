@@ -103,6 +103,63 @@ public class FileManageController {
         return result;
     }
 
+    @RequestMapping(value = "delPeriodical")
+    @ResponseBody
+    public JSONObject delPeriodical(@RequestParam(value = "id") Long id){
+
+        JSONObject result = new JSONObject();
+
+        try {
+
+            periodicalService.deleteById(id);
+            result.put("msg","success");
+
+        }catch (Exception e){
+            result.put("msg","Exception");
+            logger.error(e.getMessage());
+        }
+
+        return result;
+
+    }
+
+
+    @RequestMapping(value = "delDocument")
+    @ResponseBody
+    public JSONObject delDocument(@RequestParam(value = "id") Long id){
+
+        JSONObject result = new JSONObject();
+
+        try {
+            documentService.deleteById(id);
+            result.put("msg","success");
+        }catch (Exception e){
+            result.put("msg","Exception");
+            logger.error(e.getMessage());
+        }
+
+        return result;
+
+    }
+
+    @RequestMapping(value = "delDriver")
+    @ResponseBody
+    public JSONObject delDriver(@RequestParam(value = "id") Long id){
+
+        JSONObject result = new JSONObject();
+
+        try {
+            driverService.deleteById(id);
+            result.put("msg","success");
+        }catch (Exception e){
+            result.put("msg","Exception");
+            logger.error(e.getMessage());
+        }
+
+        return result;
+
+    }
+
 
     @RequestMapping(value = "createDocument")
     @ResponseBody

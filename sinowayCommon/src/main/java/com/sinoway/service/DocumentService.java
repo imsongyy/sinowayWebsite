@@ -15,4 +15,6 @@ public interface DocumentService {
 
     DocumentEntity findById(Long id);
 
+    void deleteById(Long id);
+
 }
